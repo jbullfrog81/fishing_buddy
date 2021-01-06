@@ -6,7 +6,7 @@ import requests
 #print(forecast)
 
 
-# User-Agent: (myweatherapp.com, contact@myweatherapp.com) 
+# User-Agent: (myweatherapp.com, contact@myweatherapp.com)
 headers = {'user-agent': 'JeremiahBrooks, jbullfrog81@gmail.com'}
 
 #https://api.weather.gov/points/39.7456,-97.0892
@@ -16,5 +16,3 @@ nwsAPIEndPointFull = "https://api.weather.gov/points/39.7456,-97.0892/forecast/h
 
 req = requests.get(nwsAPIEndPointFull, headers=headers)
 print(req.json())
-
-

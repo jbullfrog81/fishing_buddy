@@ -1,4 +1,3 @@
-#import urllib.request  # instead of urllib2 like in Python 2.7
 import json
 import requests
 import datetime
@@ -6,7 +5,6 @@ import datetime
 class Weather:
 
   def printFutureWeatherResults(self, weatherData, numberFutureHours):
-    # Use the json module to load the string data into a dictionary
     #self.theWeatherJSON = json.loads(weatherData)
     self.theWeatherJSON = weatherData
     self.printNumberOfHours = numberFutureHours
@@ -18,7 +16,7 @@ class Weather:
     #for i in theWeatherJSON["properties"]["periods"]:
     for i in range(self.printNumberOfHours):
       self.weatherSubsetJSON = self.theWeatherJSON["properties"]["periods"][i]
-      
+
       print("------------------------------")
       #print (i["startTime"].strftime("%I:%M:%S %p") + " to " + i["endTime"].strftime("%I:%M:%S %p"))
       startTimeOriginal = self.weatherSubsetJSON["startTime"]
@@ -37,7 +35,7 @@ class Weather:
       print("Wind: " + str(self.weatherSubsetJSON["windDirection"]) + " at " + str (self.weatherSubsetJSON["windSpeed"]))
   
 
-# User-Agent: (myweatherapp.com, contact@myweatherapp.com) 
+# User-Agent: (myweatherapp.com, contact@myweatherapp.com)
 headers = {'user-agent': 'JeremiahBrooks, jbullfrog81@gmail.com'}
 
 nwsAPIEndPointFull = "https://api.weather.gov/points/39.7456,-97.0892/forecast/hourly"
